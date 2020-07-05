@@ -1,0 +1,56 @@
+.follow {
+  margin-top: 2rem;
+  flex: 1;
+  background-color: var(--backgroundLight);
+  border-radius: var(--borderRadiusAside);
+  &__heading {
+    padding: 1rem;
+    border-bottom: var(--border);
+    margin-bottom: 0;
+  }
+  &__container {
+    padding: 1rem;
+  }
+  &__search {
+    color: var(--darkWhite);
+    width: 100%;
+    position: relative;
+  }
+  &__icon {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    width: 24px;
+  }
+  &__input {
+    width: 100%;
+    background: var(--inputBackground);
+    border: var(--border);
+    border-radius: 9999px;
+    padding: 0.875rem 0 0.875rem 2.5rem;
+    &:focus {
+      border: 1px solid var(--primary);
+    }
+  }
+  &__item {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item:first-child {
+    margin-top: 0.5rem;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+  &__button {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    transition: background-color 0.2s;
+    &:hover {
+      color: var(--white);
+      background-color: var(--primary);
+    }
+  }
+}

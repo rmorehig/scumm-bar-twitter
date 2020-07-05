@@ -1,0 +1,26 @@
+.wall {
+  &__container {
+    display: flex;
+    align-items: center;
+    border-bottom: var(--border);
+    padding: 1rem 1.5rem;
+  }
+  &__heading {
+    margin: 0;
+    width: 100%;
+  }
+  &__back {
+    color: var(--primary);
+    margin-right: 0.5rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 37px;
+    min-width: 37px;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: var(--backgroundLight);
+    }
+  }
+}
