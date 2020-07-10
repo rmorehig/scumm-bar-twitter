@@ -5,7 +5,7 @@ import { useUsers } from 'context/UsersContext'
 
 export default function useFollow() {
   const [loading, setLoading] = useState(false)
-  const { follow, setFollow, handleFollow } = useUsers()
+  const { follow, setFollow, followUser, unfollowUser } = useUsers()
 
   const handleSearch = useCallback(
     debounce(query => {
@@ -21,6 +21,12 @@ export default function useFollow() {
     }),
     [setLoading, setFollow]
   )
+  const handleFollow = user => {
+    if (user.following) {
+      return unfollowUser(user)
+    }
+    return followUser(user)
+  }
 
   return { handleSearch, loading, follow, handleFollow }
 }
