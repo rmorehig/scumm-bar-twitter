@@ -1,9 +1,9 @@
 import React from 'react'
 import SearchIcon from 'assets/SearchIcon'
-import { useUsersToFollow } from 'hooks/useUsersToFollow'
+import useFollow from 'hooks/useFollow'
 
 const Follow = () => {
-  const { handleSearch, users } = useUsersToFollow()
+  const { handleSearch, follow, handleFollow } = useFollow()
   return (
     <aside className="follow" aria-label="users to follow">
       <h2 className="follow__heading">Follow</h2>
@@ -17,13 +17,25 @@ const Follow = () => {
             onChange={event => handleSearch(event.target.value)}
           />
         </div>
-        {users && (
+        {follow && (
           <ul className="follow__results">
-            {users.map(({ id, username, name }) => (
-              <li key={id} className="following__item">
-                <a href={`/${username}`}>{name}</a>
-              </li>
-            ))}
+            {follow.map(user => {
+              const { id, username, name, following } = user
+              return (
+                <li key={id} className="follow__item">
+                  <a href={`/${username}`}>{name}</a>
+                  <button
+                    className="follow__button"
+                    aria-label={`${
+                      following ? 'unfollow' : 'follow'
+                    } ${username}`}
+                    onClick={() => handleFollow(user)}
+                  >
+                    {following ? 'Unfollow' : 'Follow'}
+                  </button>
+                </li>
+              )
+            })}
           </ul>
         )}
       </div>

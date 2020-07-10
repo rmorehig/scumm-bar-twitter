@@ -1,25 +1,26 @@
 import { useCallback, useState } from 'react'
-import { getUsersToFollow } from 'api/users'
+import { getUsersToFollow } from 'services/users'
 import { debounce } from 'utils/helpers'
+import { useUsers } from 'context/UsersContext'
 
-export function useUsersToFollow() {
+export default function useFollow() {
   const [loading, setLoading] = useState(false)
-  const [users, setUsers] = useState([])
+  const { follow, setFollow, handleFollow } = useUsers()
 
   const handleSearch = useCallback(
     debounce(query => {
       setLoading(true)
       getUsersToFollow(query).then(users => {
         if (query) {
-          setUsers(users)
+          setFollow(users)
         } else {
-          setUsers([])
+          setFollow([])
         }
         setLoading(false)
       })
     }),
-    [setLoading, setUsers]
+    [setLoading, setFollow]
   )
 
-  return { handleSearch, loading, users }
+  return { handleSearch, loading, follow, handleFollow }
 }

@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react'
 import { useUsers } from 'context/UsersContext'
-import { getFollowingUsers } from 'api/users'
+import { getFollowingUsers } from 'services/users'
 
-export function useFollowing() {
+export default function useFollowing() {
   const [loading, setLoading] = useState(false)
-  const { users, setUsers } = useUsers()
+  const { following, setFollowing } = useUsers()
 
   useEffect(() => {
     setLoading(true)
     getFollowingUsers().then(users => {
-      setUsers(users)
+      setFollowing(users)
       setLoading(false)
     })
-  }, [setLoading, setUsers])
+  }, [setLoading, setFollowing])
 
-  return { loading, users }
+  return { loading, following }
 }
