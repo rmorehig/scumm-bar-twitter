@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { usePostContext } from 'context/posts/PostContext'
 import { createPost, getPosts } from 'services/posts'
 
@@ -14,12 +14,15 @@ export default function usePosts() {
     })
   }, [setPosts])
 
-  const postMessage = async ({ message }) => {
-    setLoading(true)
-    const post = await createPost(message)
-    addPost(post)
-    setLoading(false)
-  }
+  const postMessage = useCallback(
+    async ({ message }) => {
+      setLoading(true)
+      const post = await createPost(message)
+      addPost(post)
+      setLoading(false)
+    },
+    [addPost]
+  )
 
   return { loading, posts, postMessage }
 }

@@ -26,18 +26,21 @@ export default function useFollow() {
     [setLoading, setFollow]
   )
 
-  const handleFollow = async ({ id, following }) => {
-    if (following) {
-      const user = await unfollowUserService({
+  const handleFollow = useCallback(
+    async ({ id, following }) => {
+      if (following) {
+        const user = await unfollowUserService({
+          id
+        })
+        return unfollowUser(user)
+      }
+      const user = await followUserService({
         id
       })
-      return unfollowUser(user)
-    }
-    const user = await followUserService({
-      id
-    })
-    followUser(user)
-  }
+      followUser(user)
+    },
+    [followUser, unfollowUser]
+  )
 
   return { handleSearch, loading, follow, handleFollow }
 }
