@@ -5,7 +5,7 @@ import {
   unfollowUser as unfollowUserService
 } from 'services/users'
 import { debounce } from 'utils/helpers'
-import { useUsers } from 'context/UsersContext'
+import { useUsers } from 'context/UserContext'
 
 export default function useFollow() {
   const [loading, setLoading] = useState(false)

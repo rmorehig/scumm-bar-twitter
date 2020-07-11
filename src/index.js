@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom'
 import './styles/index.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
-import { UsersContextProvider } from 'context/UsersContext'
+import { UserProvider } from 'context/UserContext'
+import { PostProvider } from 'context/posts/PostContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <UsersContextProvider>
-      <App />
-    </UsersContextProvider>
+    <UserProvider>
+      <PostProvider>
+        <App />
+      </PostProvider>
+    </UserProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

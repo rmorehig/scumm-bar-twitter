@@ -3,9 +3,9 @@ import inititalState from './initialState'
 import ACTIONS from './actions'
 import reducer from './reducer'
 
-const UsersContext = React.createContext({})
+const UserContext = React.createContext({})
 
-function UsersContextProvider({ children }) {
+function UserProvider({ children }) {
   const [{ following, follow }, dispatch] = useReducer(reducer, inititalState)
 
   const setFollowing = useCallback(
@@ -46,15 +46,15 @@ function UsersContextProvider({ children }) {
     }),
     [following, follow, setFollowing, setFollow, followUser, unfollowUser]
   )
-  return <UsersContext.Provider value={value}>{children}</UsersContext.Provider>
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>
 }
 
 function useUsers() {
-  const context = useContext(UsersContext)
+  const context = useContext(UserContext)
   if (!context) {
-    throw new Error('useUsers must be called inside UsersProvider')
+    throw new Error('useUsers must be called inside UserProvider')
   }
   return context
 }
 
-export { useUsers, UsersContextProvider }
+export { useUsers, UserProvider }
