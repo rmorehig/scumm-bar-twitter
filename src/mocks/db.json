@@ -18,7 +18,7 @@
       "id": 3,
       "name": "Charlie Smith",
       "username": "chsmith",
-      "following": "2020-07-11T11:00:01.988Z",
+      "following": false,
       "avatar": "https://pbs.twimg.com/profile_images/751591861127491584/l1swjFY4_400x400.jpg"
     },
     {
@@ -104,6 +104,24 @@
       "date": "2020-06-27T11:54:06.449Z",
       "userId": 7,
       "id": 8
+    },
+    {
+      "content": "I love vercel!",
+      "date": "2020-07-11T12:08:50.283Z",
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "content": "ffff",
+      "date": "2020-07-11T16:38:33.779Z",
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "content": "hh",
+      "date": "2020-07-11T16:38:38.548Z",
+      "userId": 1,
+      "id": 11
     }
   ]
 }

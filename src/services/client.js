@@ -1,7 +1,5 @@
-const API_URL = 'http://localhost:4000'
-
 async function client(path, config) {
-  const response = await fetch(`${API_URL}${path}`, {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}${path}`, {
     ...config,
     headers: {
       'Content-Type': 'application/json'
