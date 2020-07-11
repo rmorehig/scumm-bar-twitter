@@ -7,11 +7,20 @@ export const getUsersToFollow = async name => {
   return await client(`/users?following=false&name_like=${name}`)
 }
 
-export const followUser = async ({ id, following }) => {
+export const followUser = async ({ id }) => {
   return await client(`/users/${id}`, {
     method: 'PATCH',
     body: JSON.stringify({
-      following: following && new Date()
+      following: new Date()
+    })
+  })
+}
+
+export const unfollowUser = async ({ id }) => {
+  return await client(`/users/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify({
+      following: false
     })
   })
 }

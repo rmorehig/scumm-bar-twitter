@@ -1,5 +1,9 @@
 import { useCallback, useState } from 'react'
-import { getUsersToFollow } from 'services/users'
+import {
+  getUsersToFollow,
+  followUser as followUserService,
+  unfollowUser as unfollowUserService
+} from 'services/users'
 import { debounce } from 'utils/helpers'
 import { useUsers } from 'context/UsersContext'
 
@@ -21,11 +25,18 @@ export default function useFollow() {
     }),
     [setLoading, setFollow]
   )
-  const handleFollow = user => {
-    if (user.following) {
+
+  const handleFollow = async ({ id, following }) => {
+    if (following) {
+      const user = await unfollowUserService({
+        id
+      })
       return unfollowUser(user)
     }
-    return followUser(user)
+    const user = await followUserService({
+      id
+    })
+    followUser(user)
   }
 
   return { handleSearch, loading, follow, handleFollow }
