@@ -2,9 +2,15 @@ import React from 'react'
 import Loader from './Loader'
 import Post from './Post'
 import usePosts from 'hooks/usePosts'
+import ArrowLeft from 'assets/ArrowLeft'
+import { useHistory } from 'react-router-dom'
 
-const Wall = ({ user }) => {
-  const { loading, posts } = usePosts()
+const Wall = () => {
+  const { user, loading, posts } = usePosts()
+  const { push } = useHistory()
+  const navigateHome = () => {
+    push('/')
+  }
   return (
     <section
       className="wall"
@@ -13,6 +19,15 @@ const Wall = ({ user }) => {
       }
     >
       <div className="wall__container">
+        {user?.name && (
+          <button
+            className="wall__back"
+            aria-label="back button"
+            onClick={navigateHome}
+          >
+            <ArrowLeft />
+          </button>
+        )}
         <h2 className="wall__heading">{user?.name || 'Wall'}</h2>
       </div>
       <div>
