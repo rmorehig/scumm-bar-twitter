@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import './styles/index.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
-import { UserProvider } from 'context/UserContext'
+import { UserProvider } from 'context/users/UserContext'
 import { PostProvider } from 'context/posts/PostContext'
 
 ReactDOM.render(

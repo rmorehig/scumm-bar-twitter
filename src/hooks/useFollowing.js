@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useUsers } from 'context/UserContext'
+import { useUsers } from 'context/users/UserContext'
 import { getFollowingUsers } from 'services/users'
 
 export default function useFollowing() {
