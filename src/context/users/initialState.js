@@ -1,5 +1,4 @@
 const inititalState = {
-  status: 'idle',
   following: [],
   follow: []
 }

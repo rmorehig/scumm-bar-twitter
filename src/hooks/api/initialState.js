@@ -1,5 +1,7 @@
 const initialState = {
-  posts: []
+  status: 'idle',
+  data: null,
+  error: null
 }
 
 export default initialState
