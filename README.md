@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Twitter clone
 
-## Available Scripts
+<h2>Setup</h2>
 
-In the project directory, you can run:
+- Install dependencies:
 
-### `yarn start`
+```shell
+npm install
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Running the app in local:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```shell
+npm start
+```
 
-### `yarn test`
+- Running tests:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```shell
+npm test
+```
 
-### `yarn build`
+- Running e2e tests:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```shell
+npm run test:e2e
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<h2>Scenarios</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h3>Viewing the wall</h3>
+ 
+![View the wall](resources/wall.png)
 
-### `yarn eject`
+<h3>Viewing a user's timeline</h3>
+ 
+![View Timeline](resources/timeline.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<h3>Posting a message</h3>
+ 
+![Post a message](resources/post.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h3>Following a new user</h3>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Follow](resources/follow.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<h2>Details</h2>
 
-## Learn More
+- The main view should display an aggregated list of the users' posts that we are following, as known as the "wall".
+- Moreover, we should show a list of the currently followed users providing a link to each user's timeline ordered by posted date.
+- The user's timeline should only display the messages posted by the user ordered by posted date.
+- We need to build a new component that it provides the search and following capabilities for the new users.
+- Finally, we should be able to post messages in our timeline.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+NOTE: Add instructions about how to run the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>What we are looking for: </h2>
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Pay attention about how your code is organized.
+- How you are reflecting the domain in the code. Be careful with the separation of concerns between the UI and the business logic.
+- We love clean code.
+- We don't think 100% of code coverage is a must, but we love tests.
+- You are not intended to be proven as a designer. The provided mockups are just a guideline, feel free to build whatever you want.
+- We are not fanboys of frameworks/libraries but keep in mind that our front-end stack is based on React.js ;)
+- We are looking forward to seeing your code and discuss with you your solution.
