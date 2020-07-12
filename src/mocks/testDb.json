@@ -110,6 +110,12 @@
       "date": "2020-06-30T11:34:10.978Z",
       "userId": 1,
       "id": 9
+    },
+    {
+      "content": "Hello from cypress!",
+      "date": "2020-07-12T12:24:46.223Z",
+      "userId": 1,
+      "id": 10
     }
   ]
 }

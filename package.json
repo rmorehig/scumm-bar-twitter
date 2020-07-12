@@ -14,10 +14,13 @@
   },
   "scripts": {
     "server": "json-server --watch src/mocks/db.json --port 4000",
+    "server:test": "json-server --watch src/mocks/testDb.json --port 4000",
     "client": "react-scripts start",
     "start": "concurrently 'yarn server' 'yarn client'",
+    "start:test": "concurrently 'yarn server:test' 'yarn client'",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:e2e": "start-server-and-test 'yarn start:test' 3000 'cypress run'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,6 +40,9 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "json-server": "^0.16.1"
+    "cypress": "^4.10.0",
+    "json-server": "^0.16.1",
+    "start-server-and-test": "^1.11.2",
+    "@testing-library/cypress": "^6.0.0"
   }
 }

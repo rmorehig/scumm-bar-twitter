@@ -28,10 +28,8 @@ export default function usePosts() {
 
   const postMessage = useCallback(
     async ({ message }) => {
-      setLoading(true)
       const post = await PostService.createPost({ message })
       addPost(post)
-      setLoading(false)
     },
     [addPost]
   )

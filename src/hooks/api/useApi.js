@@ -1,22 +1,35 @@
-import { useReducer } from 'react'
+import { useReducer, useEffect, useCallback, useMemo } from 'react'
 import reducer from './reducer'
 import initialState from './initialState'
 import ACTIONS from './actions'
 
-function useApi(request) {
+function useApi({ service, onLoad = false, params = {} }) {
   const [{ data, error, status }, dispatch] = useReducer(reducer, initialState)
 
-  const service = async () => {
+  const request = useCallback(async () => {
     dispatch({ type: ACTIONS.LOADING })
     try {
-      const data = await request()
+      const data = await service(params)
       dispatch({ type: ACTIONS.SUCCESS, payload: { data } })
     } catch (error) {
       dispatch({ type: ACTIONS.ERROR, payload: { error } })
     }
-  }
+  }, [dispatch, service])
 
-  return { data, error, status, service }
+  useEffect(() => {
+    if (onLoad) {
+      request()
+    }
+  }, [request, onLoad])
+
+  const value = useMemo(() => ({ data, error, status, request }), [
+    data,
+    error,
+    status,
+    request
+  ])
+
+  return value
 }
 
 export default useApi
