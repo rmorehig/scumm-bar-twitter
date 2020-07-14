@@ -1,5 +1,5 @@
 async function client(path, config) {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}${path}`, {
+  const response = await fetch(`/api${path}`, {
     ...config,
     headers: {
       'Content-Type': 'application/json'

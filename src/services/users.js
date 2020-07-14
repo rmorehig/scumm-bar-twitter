@@ -4,7 +4,7 @@ export const getFollowingUsers = async () => {
   return await client('/users/following')
 }
 export const getUsersToFollow = async name => {
-  return await client('/users/follow')
+  return await client(`/users/follow?name=${name}`)
 }
 
 export const followUser = async ({ id }) => {
