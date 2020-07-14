@@ -1,7 +1,7 @@
 export const mockPosts = [
   {
     id: 4,
-    date: '2020-06-10T22:37:08.056Z',
+    createdAt: '2020-06-10T22:37:08.056Z',
     content:
       "Having coverage doesn't give confidence, the important thing is to write good tests which covers important scenarios",
     userId: 3,
@@ -16,7 +16,7 @@ export const mockPosts = [
   },
   {
     id: 3,
-    date: '2019-12-17T22:37:08.056Z',
+    createdAt: '2019-12-17T22:37:08.056Z',
     content: "You can't hide, Rey. Not from me.",
     userId: 5,
     user: {
@@ -41,7 +41,7 @@ export const mockUsers = [
     posts: [
       {
         id: 4,
-        date: '2020-06-10T22:37:08.056Z',
+        createdAt: '2020-06-10T22:37:08.056Z',
         content:
           "Having coverage doesn't give confidence, the important thing is to write good tests which covers important scenarios",
         userId: 3
@@ -123,7 +123,7 @@ export const mockMe = {
 export const mockPostsToFilter = [
   {
     id: 1,
-    date: '2019-05-10T22:37:08.056Z',
+    createdAt: '2019-05-10T22:37:08.056Z',
     content: 'one post',
     userId: 1,
     user: {
@@ -133,7 +133,7 @@ export const mockPostsToFilter = [
   },
   {
     id: 2,
-    date: '2019-09-28T22:37:08.056Z',
+    createdAt: '2019-09-28T22:37:08.056Z',
     content: 'one post',
     userId: 3,
     user: {
@@ -143,7 +143,7 @@ export const mockPostsToFilter = [
   },
   {
     id: 3,
-    date: '2019-09-28T22:37:08.056Z',
+    createdAt: '2019-09-28T22:37:08.056Z',
     content: 'one post',
     userId: 4,
     user: {
@@ -154,7 +154,7 @@ export const mockPostsToFilter = [
 ]
 
 export const mockPostBeforeCreate = {
-  date: '2019-05-10T22:37:08.056Z',
+  createdAt: '2019-05-10T22:37:08.056Z',
   content: 'one post',
   userId: 1
 }

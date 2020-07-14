@@ -29,7 +29,7 @@ export default function usePosts() {
 
   const postMessage = useCallback(
     async ({ message }) => {
-      const post = await createPost({ message })
+      const { post } = await createPost({ userId: 1, content: message })
       addPost(post)
     },
     [addPost]

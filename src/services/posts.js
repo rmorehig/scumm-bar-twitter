@@ -1,15 +1,12 @@
 import client from './client'
-import { newPost, formatPost } from '../utils/posts'
 
 export const getWall = async () => {
-  const posts = await client('/posts/wall')
-  return posts
+  return await client('/posts/wall')
 }
 
-export const createPost = async content => {
-  const post = await client('/posts', {
+export const createPost = async ({ content, userId }) => {
+  return await client('/posts/new', {
     method: 'POST',
-    body: JSON.stringify(newPost(content))
+    body: JSON.stringify({ content, userId })
   })
-  return formatPost(post)
 }

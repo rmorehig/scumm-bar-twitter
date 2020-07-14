@@ -7,6 +7,10 @@ export const getUsersToFollow = async name => {
   return await client(`/users/follow?name=${name}`)
 }
 
+export const getUserDetails = async username => {
+  return await client(`/users/${username}`)
+}
+
 export const followUser = async ({ id }) => {
   return await client(`/users/${id}`, {
     method: 'PATCH',
@@ -23,8 +27,4 @@ export const unfollowUser = async ({ id }) => {
       following: false
     })
   })
-}
-
-export const getUserDetails = async username => {
-  return await client(`/users/${username}`)
 }

@@ -19,7 +19,7 @@ describe('posts', () => {
     jest.spyOn(global, 'Date').mockImplementationOnce(() => new Date(mockDate))
     const expectedPost = {
       userId: 1,
-      date: new Date(mockDate),
+      createdAt: new Date(mockDate),
       content: 'new message'
     }
     const post = newPost('new message')

@@ -6,7 +6,7 @@ const Post = ({ post }) => {
   if (!Object.keys(post).length) {
     return
   }
-  const { date, content, user } = post
+  const { createdAt, content, user } = post
   return (
     <article className="post">
       <div className="post__container">
@@ -18,9 +18,9 @@ const Post = ({ post }) => {
             <Link to={`/${user?.username}`} className="post__name">
               <span>{user?.name}</span>
             </Link>
-            <span className="post__username"> {user?.username}</span>
+            <span className="post__username"> @{user?.username}</span>
             <span className="post__divider"> · </span>
-            <time className="post__date">{formatDate(date)}</time>
+            <time className="post__date">{formatDate(createdAt)}</time>
           </div>
           <p>{content}</p>
         </div>

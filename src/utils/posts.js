@@ -9,7 +9,7 @@ export const formatPost = post => ({
 
 export const newPost = content => ({
   content,
-  date: new Date(),
+  createdAt: new Date(),
   userId: 1
 })
 
