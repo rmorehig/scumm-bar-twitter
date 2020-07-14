@@ -14,7 +14,7 @@ export default function useFollow() {
   const handleSearch = useCallback(
     debounce(query => {
       setLoading(true)
-      getUsersToFollow(query).then(users => {
+      getUsersToFollow(query).then(({ users }) => {
         if (query) {
           setFollow(users)
         } else {

@@ -2,7 +2,8 @@ import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import { usePostContext } from 'context/posts/PostContext'
 import { getUserDetails } from 'services/users'
-import PostService from 'services/postService'
+import { getWall } from 'services/posts'
+import { createPost } from 'services/posts'
 
 export default function usePosts() {
   const { posts, setPosts, addPost } = usePostContext()
@@ -19,7 +20,7 @@ export default function usePosts() {
         setLoading(false)
       })
     } else {
-      PostService.getPosts().then(posts => {
+      getWall().then(({ posts }) => {
         setPosts(posts)
         setLoading(false)
       })
@@ -28,7 +29,7 @@ export default function usePosts() {
 
   const postMessage = useCallback(
     async ({ message }) => {
-      const post = await PostService.createPost({ message })
+      const post = await createPost({ message })
       addPost(post)
     },
     [addPost]

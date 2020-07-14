@@ -1,9 +1,9 @@
 import client from './client'
-import { newPost, formatPost, filterPostsFromWall } from '../utils/posts'
+import { newPost, formatPost } from '../utils/posts'
 
-export const getPosts = async () => {
-  const posts = await client('/posts?_expand=user&_sort=date&_order=desc')
-  return filterPostsFromWall(posts)
+export const getWall = async () => {
+  const posts = await client('/posts/wall')
+  return posts
 }
 
 export const createPost = async content => {

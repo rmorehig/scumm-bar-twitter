@@ -1,11 +1,11 @@
-import UserService from 'services/userService'
+import { getUserDetails } from 'services/users'
 import useApi from './api/useApi'
 import { useParams } from 'react-router-dom'
 
 function useUserDetails() {
   const { username } = useParams()
   const { data, status } = useApi({
-    service: UserService.getUserDetails,
+    service: getUserDetails,
     params: { username },
     onLoad: true
   })

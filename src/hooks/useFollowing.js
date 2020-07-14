@@ -4,11 +4,11 @@ import { getFollowingUsers } from 'services/users'
 
 export default function useFollowing() {
   const [loading, setLoading] = useState(false)
-  const { following, setFollowing } = useUsers()
+  const { following, setFollowing } = useUsers([])
 
   useEffect(() => {
     setLoading(true)
-    getFollowingUsers().then(users => {
+    getFollowingUsers().then(({ users }) => {
       setFollowing(users)
       setLoading(false)
     })

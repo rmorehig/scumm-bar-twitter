@@ -1,10 +1,10 @@
 import client from './client'
 
 export const getFollowingUsers = async () => {
-  return await client('/users?following_ne=false&_sort=following&_order=asc')
+  return await client('/users/following')
 }
 export const getUsersToFollow = async name => {
-  return await client(`/users?following=false&name_like=${name}`)
+  return await client('/users/follow')
 }
 
 export const followUser = async ({ id }) => {
@@ -26,13 +26,5 @@ export const unfollowUser = async ({ id }) => {
 }
 
 export const getUserDetails = async username => {
-  const users = await client(`/users/?username=${username}&_embed=posts`)
-  const user = users[0]
-  const posts = user.posts
-    .map(post => ({
-      ...post,
-      user
-    }))
-    .reverse()
-  return { user, posts }
+  return await client(`/users/${username}`)
 }

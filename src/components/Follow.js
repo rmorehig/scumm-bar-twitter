@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchIcon from 'assets/SearchIcon'
 import useFollow from 'hooks/useFollow'
+import { Link } from 'react-router-dom'
 
 const Follow = () => {
   const { handleSearch, follow, handleFollow } = useFollow()
@@ -23,7 +24,7 @@ const Follow = () => {
               const { id, username, name, following } = user
               return (
                 <li key={id} className="follow__item">
-                  <a href={`/${username}`}>{name}</a>
+                  <Link to={`/${username}`}>{name}</Link>
                   <button
                     className="follow__button"
                     aria-label={`${
