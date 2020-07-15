@@ -10,8 +10,8 @@ export const getUserById = async ({ id }) => {
 
 export const getMe = async () => usersDb.find(user => user.me)
 
-export const getUsersToFollow = async ({ me, name }) => {
-  const following = await getFollowingUsers({ user: me })
+export const getUsersToFollow = async ({ user, name }) => {
+  const following = await getFollowingUsers({ user })
   return usersDb.filter(user =>
     following.every(
       ({ id }) =>

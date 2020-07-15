@@ -1,10 +1,10 @@
 import client from './client'
 
 export const getFollowingUsers = async () => {
-  return await client('/users/following')
+  return await client('/users?status=following')
 }
 export const getUsersToFollow = async name => {
-  return await client(`/users/follow?name=${name}`)
+  return await client(`/users?name=${name}`)
 }
 
 export const getUserDetails = async username => {
