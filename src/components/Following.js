@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import useFollowing from 'hooks/useFollowing'
 import Loader from './Loader'
 
@@ -12,7 +13,7 @@ const Following = () => {
         <ul aria-label="following users">
           {following.map(({ id, username, name }) => (
             <li key={id} className="following__item">
-              <a href={`/${username}`}>{name}</a>
+              <Link href={`/${username}`}>{name}</Link>
             </li>
           ))}
         </ul>
