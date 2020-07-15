@@ -11,9 +11,11 @@ export const getUserById = async ({ id }) => {
 export const getMe = async () => usersDb.find(user => user.me)
 
 export const getUsersToFollow = async ({ me, name }) => {
+  const following = await getFollowingUsers({ user: me })
   return usersDb.filter(user =>
-    me.following.every(
-      id => id !== user.id && !user.me && user.name.toLowerCase().includes(name)
+    following.every(
+      ({ id }) =>
+        id !== user.id && !user.me && user.name.toLowerCase().includes(name)
     )
   )
 }
