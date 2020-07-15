@@ -1,7 +1,7 @@
-import { users as usersDb } from '../db.json'
+import { getMe, getFollowingUsers } from './handlers'
 
-export default (_, response) => {
-  const me = usersDb.find(user => user.me)
-  const users = usersDb.filter(user => me.following.some(id => id === user.id))
+export default async (_, response) => {
+  const me = await getMe()
+  const users = await getFollowingUsers({ me })
   response.json({ users })
 }

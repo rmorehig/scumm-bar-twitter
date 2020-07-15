@@ -1,6 +1,6 @@
-import { users } from '../db.json'
+import { getMe } from './handlers'
 
-export default (_, response) => {
-  const user = users.find(user => user.me)
+export default async (_, response) => {
+  const user = await getMe()
   response.json({ user })
 }

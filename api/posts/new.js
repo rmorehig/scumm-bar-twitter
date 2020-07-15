@@ -1,10 +1,11 @@
-import { posts as postsDb, users as usersDb } from '../db.json'
+import { createId } from './handlers'
+import { getUserById } from '../users/handlers'
 
-export default (request, response) => {
+export default async (request, response) => {
   const { userId, content } = request.body
-  const user = usersDb.find(user => user.id === userId)
+  const user = await getUserById({ id: userId })
   const post = {
-    id: postsDb.length,
+    id: createId(),
     content,
     userId,
     createdAt: new Date(),

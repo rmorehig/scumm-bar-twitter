@@ -1,12 +1,8 @@
-import { users as usersDb } from '../db.json'
+import { getMe, getUsersToFollow } from './handlers'
 
-export default (request, response) => {
+export default async (request, response) => {
   const { name } = request.query
-  const me = usersDb.find(user => user.me)
-  const users = usersDb.filter(user =>
-    me.following.every(
-      id => id !== user.id && !user.me && user.name.toLowerCase().includes(name)
-    )
-  )
+  const me = await getMe()
+  const users = await getUsersToFollow({ me, name })
   response.json({ users })
 }
