@@ -13,7 +13,7 @@ const Following = () => {
         <ul aria-label="following users">
           {following.map(({ id, username, name }) => (
             <li key={id} className="following__item">
-              <Link href={`/${username}`}>{name}</Link>
+              <Link to={`/${username}`}>{name}</Link>
             </li>
           ))}
         </ul>
