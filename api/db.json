@@ -5,49 +5,42 @@
       "name": "Rafa Moreno",
       "username": "rmorehig",
       "me": true,
-      "avatar": "https://pbs.twimg.com/profile_images/1156456662598897664/ApYcPPiq_400x400.jpg",
-      "following": [2, 3, 4]
+      "avatar": "https://pbs.twimg.com/profile_images/1156456662598897664/ApYcPPiq_400x400.jpg"
     },
     {
       "id": 2,
       "name": "Guybrush Threepwood",
       "username": "guybrush",
-      "following": false,
       "avatar": "https://www.doblajevideojuegos.es/blog/wp-content/uploads/291135-gt3.jpg"
     },
     {
       "id": 3,
       "name": "Charlie Smith",
       "username": "chsmith",
-      "following": false,
       "avatar": "https://pbs.twimg.com/profile_images/751591861127491584/l1swjFY4_400x400.jpg"
     },
     {
       "id": 4,
       "name": "Ben Kenobi",
       "username": "benkenobi",
-      "following": "2019-07-26T23:46:55.113Z",
       "avatar": "https://pbs.twimg.com/profile_images/1277510340222337024/p_bXydq__400x400.jpg"
     },
     {
       "id": 5,
       "name": "Kylo Ren",
       "username": "kyloren",
-      "following": "2019-06-26T23:46:55.113Z",
       "avatar": "https://pbs.twimg.com/profile_images/679075823907831809/bJjXiFwm_400x400.jpg"
     },
     {
       "id": 6,
       "name": "Bruce Wayne",
       "username": "brucewayne",
-      "following": "2019-06-26T23:46:55.113Z",
       "avatar": "https://pbs.twimg.com/profile_images/1037302367715303424/6GFMd2FZ_400x400.jpg"
     },
     {
       "id": 7,
       "name": "Roger Federer",
       "username": "roger",
-      "following": false,
       "avatar": "https://pbs.twimg.com/profile_images/1181229626284265472/Rh8wrrvO_400x400.jpg"
     }
   ],
@@ -106,5 +99,10 @@
       "userId": 7,
       "id": 8
     }
+  ],
+  "follows": [
+    { "userId": 1, "followingId": 2, "followedAt": "2019-07-26T23:46:55.113Z" },
+    { "userId": 1, "followingId": 3, "followedAt": "2019-07-26T23:46:55.113Z" },
+    { "userId": 1, "followingId": 4, "followedAt": "2019-07-26T23:46:55.113Z" }
   ]
 }

@@ -1,18 +1,10 @@
-import { users as usersDb, posts as postsDb } from '../db.json'
+import { getMe, getFollowingUsers } from '../users/handlers'
+import { getPostsFromUsers } from './handlers'
 
-export default (_, response) => {
-  const me = usersDb.find(user => user.me)
-  const following = usersDb.filter(user =>
-    me.following.some(id => id === user.id)
-  )
+export default async (_, response) => {
+  const me = await getMe()
+  const following = await getFollowingUsers({ user: me })
   const users = [me, ...following]
-  let posts = postsDb.filter(post => users.some(({ id }) => id === post.userId))
-  posts = posts.map(post => {
-    const user = users.find(user => user.id === post.userId)
-    return {
-      ...post,
-      user
-    }
-  })
+  const posts = await getPostsFromUsers({ users })
   response.json({ posts })
 }

@@ -16,7 +16,7 @@
     "server": "json-server --watch src/mocks/db.json --port 4000",
     "server:test": "json-server --watch src/mocks/testDb.json --port 4000",
     "client": "react-scripts start",
-    "start": "concurrently 'yarn server' 'yarn client'",
+    "start": "vercel dev",
     "start:test": "concurrently 'yarn server:test' 'yarn client'",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,10 +39,11 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
     "concurrently": "^5.2.0",
     "cypress": "^4.10.0",
     "json-server": "^0.16.1",
     "start-server-and-test": "^1.11.2",
-    "@testing-library/cypress": "^6.0.0"
+    "vercel": "^19.1.2"
   }
 }

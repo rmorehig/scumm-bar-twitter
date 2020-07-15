@@ -1,4 +1,4 @@
-import { users as usersDb } from '../db.json'
+import { users as usersDb, follows as followsDb } from '../db.json'
 
 export const getUserByUsername = async ({ username }) => {
   return usersDb.find(user => user.username === username)
@@ -18,6 +18,8 @@ export const getUsersToFollow = async ({ me, name }) => {
   )
 }
 
-export const getFollowingUsers = async ({ me }) => {
-  return usersDb.filter(user => me.following.some(id => id === user.id))
+export const getFollowingUsers = async ({ user }) => {
+  return followsDb
+    .filter(follow => follow.userId === user.id)
+    .map(({ followingId }) => usersDb.find(({ id }) => id === followingId))
 }
