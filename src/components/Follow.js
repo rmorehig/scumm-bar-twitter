@@ -21,18 +21,18 @@ const Follow = () => {
         {follow && (
           <ul className="follow__results">
             {follow.map(user => {
-              const { id, username, name, following } = user
+              const { id, username, name, followedAt } = user
               return (
                 <li key={id} className="follow__item">
                   <Link to={`/${username}`}>{name}</Link>
                   <button
                     className="follow__button"
                     aria-label={`${
-                      following ? 'unfollow' : 'follow'
+                      followedAt ? 'unfollow' : 'follow'
                     } ${username}`}
                     onClick={() => handleFollow(user)}
                   >
-                    {following ? 'Unfollow' : 'Follow'}
+                    {followedAt ? 'Unfollow' : 'Follow'}
                   </button>
                 </li>
               )

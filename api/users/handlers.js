@@ -25,3 +25,11 @@ export const getFollowingUsers = async ({ user }) => {
     .filter(follow => follow.userId === user.id)
     .map(({ followingId }) => usersDb.find(({ id }) => id === followingId))
 }
+
+export const followUser = ({ user }) => {
+  user.followedAt = new Date()
+}
+
+export const unfollowUser = ({ user }) => {
+  delete user.followedAt
+}

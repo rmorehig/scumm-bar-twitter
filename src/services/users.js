@@ -3,7 +3,7 @@ import client from './client'
 export const getFollowingUsers = async () => {
   return await client('/users?status=following')
 }
-export const getUsersToFollow = async name => {
+export const getUsersToFollow = async ({ name }) => {
   return await client(`/users?name=${name}`)
 }
 
@@ -11,20 +11,14 @@ export const getUserDetails = async username => {
   return await client(`/users/${username}`)
 }
 
-export const followUser = async ({ id }) => {
-  return await client(`/users/${id}`, {
-    method: 'PATCH',
-    body: JSON.stringify({
-      following: new Date()
-    })
+export const followUser = async ({ username }) => {
+  return await client(`/users/${username}/follow`, {
+    method: 'POST'
   })
 }
 
-export const unfollowUser = async ({ id }) => {
-  return await client(`/users/${id}`, {
-    method: 'PATCH',
-    body: JSON.stringify({
-      following: false
-    })
+export const unfollowUser = async ({ username }) => {
+  return await client(`/users/${username}/unfollow`, {
+    method: 'POST'
   })
 }

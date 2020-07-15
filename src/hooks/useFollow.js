@@ -14,7 +14,7 @@ export default function useFollow() {
   const handleSearch = useCallback(
     debounce(query => {
       setLoading(true)
-      getUsersToFollow(query).then(({ users }) => {
+      getUsersToFollow({ name: query }).then(({ users }) => {
         if (query) {
           setFollow(users)
         } else {
@@ -27,15 +27,15 @@ export default function useFollow() {
   )
 
   const handleFollow = useCallback(
-    async ({ id, following }) => {
-      if (following) {
-        const user = await unfollowUserService({
-          id
+    async ({ username, followedAt }) => {
+      if (followedAt) {
+        const { user } = await unfollowUserService({
+          username
         })
         return unfollowUser(user)
       }
-      const user = await followUserService({
-        id
+      const { user } = await followUserService({
+        username
       })
       followUser(user)
     },

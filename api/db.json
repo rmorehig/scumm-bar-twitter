@@ -15,32 +15,32 @@
     },
     {
       "id": 3,
-      "name": "Charlie Smith",
-      "username": "chsmith",
+      "name": "LeChuck",
+      "username": "lechuck",
       "avatar": "https://pbs.twimg.com/profile_images/751591861127491584/l1swjFY4_400x400.jpg"
     },
     {
       "id": 4,
-      "name": "Ben Kenobi",
-      "username": "benkenobi",
+      "name": "Elaine Marley",
+      "username": "elaine",
       "avatar": "https://pbs.twimg.com/profile_images/1277510340222337024/p_bXydq__400x400.jpg"
     },
     {
       "id": 5,
-      "name": "Kylo Ren",
-      "username": "kyloren",
+      "name": "Otis Prisoner",
+      "username": "otis",
       "avatar": "https://pbs.twimg.com/profile_images/679075823907831809/bJjXiFwm_400x400.jpg"
     },
     {
       "id": 6,
-      "name": "Bruce Wayne",
-      "username": "brucewayne",
+      "name": "Stan S. Stanman",
+      "username": "stan",
       "avatar": "https://pbs.twimg.com/profile_images/1037302367715303424/6GFMd2FZ_400x400.jpg"
     },
     {
       "id": 7,
-      "name": "Roger Federer",
-      "username": "roger",
+      "name": "Carla Swordmaster",
+      "username": "carla",
       "avatar": "https://pbs.twimg.com/profile_images/1181229626284265472/Rh8wrrvO_400x400.jpg"
     }
   ],
@@ -48,7 +48,7 @@
     {
       "id": 1,
       "createdAt": "2019-05-10T22:37:08.056Z",
-      "content": "Having coverage doesn't give confidence, the important thing is to write good tests which covers important scenarios",
+      "content": "I'm Guybrush Threepwood, Mighty Pirate™!",
       "userId": 2
     },
     {
@@ -60,7 +60,7 @@
     {
       "id": 3,
       "createdAt": "2019-12-17T22:37:08.056Z",
-      "content": "You can't hide, Rey. Not from me.",
+      "content": "Oh, come on. Don't be bitter. I'm here to help. Not just for the money.",
       "userId": 5
     },
     {
@@ -82,22 +82,16 @@
       "id": 6
     },
     {
+      "id": 7,
       "content": "React makes my life easier on the front end.",
       "createdAt": "2020-06-30T10:54:06.449Z",
-      "userId": 6,
-      "id": 7
+      "userId": 6
     },
     {
-      "content": "I have the high ground.",
+      "id": 8,
+      "content": "How dare you approach the Sword Master without permission?",
       "createdAt": "2020-06-30T11:54:06.449Z",
-      "userId": 4,
-      "id": 8
-    },
-    {
-      "content": "Hey guys",
-      "createdAt": "2020-06-27T11:54:06.449Z",
-      "userId": 7,
-      "id": 8
+      "userId": 7
     }
   ],
   "follows": [
