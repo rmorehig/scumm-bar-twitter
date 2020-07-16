@@ -41,4 +41,4 @@ npm run test:e2e
 
 - [ ] Implement DDD and CQRS
 - [ ] Extract api to another service
-- [ ] More tests
+- [ ] More tests (some tests fail due to refactoring the app from vanillaJS)
