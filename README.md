@@ -3,6 +3,8 @@
 This app is inspired by a task I had to deliver for a technical interview.
 It's developed for learning purposes and simulates a Twitter like app.
 
+[Live demo](https://scumm-bar-twitter.vercel.app)
+
 <h2>Tech Stack</h2>
 
 - [React](https://es.reactjs.org)
