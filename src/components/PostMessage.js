@@ -13,7 +13,7 @@ const PostMessage = ({ onSubmit }) => {
   }
   return (
     <header className="post-message" aria-label="post message">
-      <h2 className="post-message__heading">Post message</h2>
+      <h2 className="post-message__heading">Home</h2>
       <div className="post-message__container">
         <div className="post-message__avatar">
           <img src={mockMe.avatar} alt="avatar" />
