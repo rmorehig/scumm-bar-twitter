@@ -14,7 +14,7 @@ export default function usePosts() {
   useEffect(() => {
     setLoading(true)
     if (username) {
-      getUserDetails(username).then(({ user, posts }) => {
+      getUserDetails({ username }).then(({ user, posts }) => {
         setPosts(posts)
         setUser(user)
         setLoading(false)

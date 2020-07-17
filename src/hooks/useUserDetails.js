@@ -1,16 +1,17 @@
-import { getUserDetails } from 'services/users'
-import useApi from './api/useApi'
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { getUserDetails } from 'services/users'
+import useAsync from './useAsync'
 
 function useUserDetails() {
   const { username } = useParams()
-  const { data, status } = useApi({
-    service: getUserDetails,
-    params: { username },
-    onLoad: true
-  })
+  const { status, data, error, run } = useAsync()
 
-  return { data, status }
+  useEffect(() => {
+    run(getUserDetails({ username }))
+  }, [run, username])
+
+  return { user: data?.user, posts: data?.posts, status, error }
 }
 
 export default useUserDetails

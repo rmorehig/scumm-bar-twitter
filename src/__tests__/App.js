@@ -3,7 +3,7 @@ import { screen, render } from '@testing-library/react'
 import App from '../App'
 
 describe('App', () => {
-  it('renders without crashing', async () => {
+  it('renders properly', () => {
     render(<App />)
     expect(
       screen.getByRole('banner', { name: /post message/i })
@@ -18,5 +18,8 @@ describe('App', () => {
     expect(
       screen.getByRole('complementary', { name: /users to follow/i })
     ).toBeInTheDocument()
+    expect(
+      screen.getByRole('textbox', { name: /search users to follow/i })
+    ).not.toHaveValue()
   })
 })

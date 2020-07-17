@@ -1,5 +1,5 @@
 import Home from 'pages/Home'
-import UserDetails from 'pages/UserDetails'
+import User from 'pages/User'
 
 const routes = [
   {
@@ -7,7 +7,7 @@ const routes = [
     path: '/'
   },
   {
-    Page: UserDetails,
+    Page: User,
     path: '/:username'
   }
 ]

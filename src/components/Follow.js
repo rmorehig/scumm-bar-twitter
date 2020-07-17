@@ -16,6 +16,7 @@ const Follow = () => {
             type="text"
             placeholder="Search"
             onChange={event => handleSearch(event.target.value)}
+            aria-label="search users to follow"
           />
         </div>
         {follow && (

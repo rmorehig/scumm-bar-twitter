@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
 import { mockMe } from 'mocks/utils'
-import usePosts from 'hooks/usePosts'
 
-const PostMessage = () => {
+const PostMessage = ({ onSubmit }) => {
   const [message, setMessage] = useState('')
-  const { postMessage } = usePosts()
   const handleChange = event => {
     setMessage(event.target.value)
   }
   const handleSubmit = event => {
     event.preventDefault()
-    postMessage({ message })
+    onSubmit({ message })
     setMessage('')
   }
   return (

@@ -3,12 +3,13 @@
 @import './post';
 @import './post-message';
 @import './wall';
+@import './user-details';
 @import './loader';
 
 :root {
-  --primary: #48bb78;
-  --primaryLight: #c6f6d5;
-  --primaryDark: #38a169;
+  --primary: #794bc4;
+  --primaryLight: #865dca;
+  --primaryDark: #0a1e3f;
   --secondary: #ca2055;
   --secondaryLight: #ca2055;
   --white: #ffffff;

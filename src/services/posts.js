@@ -1,4 +1,4 @@
-import client from './client'
+import client from 'utils/client'
 
 export const getWall = async () => {
   return await client('/posts/wall')
@@ -6,7 +6,6 @@ export const getWall = async () => {
 
 export const createPost = async ({ content, userId }) => {
   return await client('/posts/new', {
-    method: 'POST',
-    body: JSON.stringify({ content, userId })
+    body: { content, userId }
   })
 }
