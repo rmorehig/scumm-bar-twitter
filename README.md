@@ -1,7 +1,7 @@
 # Scumm Bar Twitter
 
 This app is inspired by a task I had to deliver for a technical interview.
-It's developed for learning purposes and simulates a Twitter like app for pirates.
+It's developed for learning purposes and simulates a Twitter like app.
 
 <h2>Tech Stack</h2>
 
