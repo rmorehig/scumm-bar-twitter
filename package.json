@@ -11,7 +11,6 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "client": "react-scripts start",
     "start": "vercel dev",
     "build": "react-scripts build",
     "test": "react-scripts test",

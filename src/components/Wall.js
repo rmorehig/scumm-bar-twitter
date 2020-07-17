@@ -6,9 +6,7 @@ const Wall = ({ posts }) => {
   return (
     <section
       className="wall"
-      aria-label={
-        window.location.pathname === '/' ? 'home wall' : 'user details wall'
-      }
+      aria-label={window.location.pathname === '/' ? 'home wall' : 'user wall'}
     >
       <div>
         {!posts ? (

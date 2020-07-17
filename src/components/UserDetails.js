@@ -8,7 +8,7 @@ const UserDetails = ({ user }) => {
     push('/')
   }
   return (
-    <div className="user-details__container">
+    <header aria-label="user details" className="user-details__container">
       {user?.name && (
         <button
           className="user-details__back"
@@ -19,7 +19,7 @@ const UserDetails = ({ user }) => {
         </button>
       )}
       <h2 className="user-details__heading">{user?.name}</h2>
-    </div>
+    </header>
   )
 }
 
