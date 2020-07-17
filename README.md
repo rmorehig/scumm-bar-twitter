@@ -43,4 +43,5 @@ yarn test:e2e
 
 - [ ] Refactor sass to styled components
 - [ ] Extract api to another service
+- [ ] Add data persistence
 - [ ] More tests (some tests fail due to refactoring the app from vanillaJS)
