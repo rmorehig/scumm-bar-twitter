@@ -39,6 +39,5 @@ npm run test:e2e
 
 <h2>Todo </h2>
 
-- [ ] Implement DDD and CQRS
 - [ ] Extract api to another service
 - [ ] More tests (some tests fail due to refactoring the app from vanillaJS)

@@ -8,7 +8,7 @@ import { createPost } from 'services/posts'
 export default function usePosts() {
   const { posts, setPosts, addPost } = usePostContext()
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const { username } = useParams()
 
   useEffect(() => {
