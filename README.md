@@ -16,25 +16,25 @@ It's developed for learning purposes and simulates a Twitter like app.
 - Install dependencies:
 
 ```shell
-npm install
+yarn install
 ```
 
 - Running the app in local:
 
 ```shell
-npm start
+yarn start
 ```
 
 - Running tests:
 
 ```shell
-npm test
+yarn test
 ```
 
 - Running e2e tests:
 
 ```shell
-npm run test:e2e
+yarn test:e2e
 ```
 
 <h2>Todo </h2>
