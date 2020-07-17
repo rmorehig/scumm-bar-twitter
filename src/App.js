@@ -6,19 +6,19 @@ import Loader from 'components/Loader'
 
 function App() {
   return (
-    <Suspense fallback={<Loader />}>
-      <Router>
-        <Layout>
-          <Switch>
+    <Router>
+      <Layout>
+        <Switch>
+          <Suspense fallback={<Loader />}>
             {routes.map(({ Page, path }) => (
               <Route key={path} exact path={path}>
                 <Page />
               </Route>
             ))}
-          </Switch>
-        </Layout>
-      </Router>
-    </Suspense>
+          </Suspense>
+        </Switch>
+      </Layout>
+    </Router>
   )
 }
 
