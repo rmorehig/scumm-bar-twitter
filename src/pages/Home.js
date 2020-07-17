@@ -7,11 +7,11 @@ import Divider from 'styles/Divider'
 const Home = () => {
   const { posts, postMessage } = usePosts()
   return (
-    <div>
+    <>
       <PostMessage onSubmit={postMessage} />
       <Divider />
       <Wall posts={posts} />
-    </div>
+    </>
   )
 }
 

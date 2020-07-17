@@ -10,11 +10,15 @@ async function client(path, { body, token } = {}) {
   if (response.status === 401) {
     return Promise.reject({ message: 'You need authentication.' })
   }
+  if (response.status === 404) {
+    return Promise.reject({ message: 'Url not found' })
+  }
   const data = await response.json()
   if (response.ok) {
     return data
+  } else {
+    return Promise.reject({ message: 'Something went wrong.' })
   }
-  return Promise.reject({ message: 'Something went wrong.' })
 }
 
 export default client

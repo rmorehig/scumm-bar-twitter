@@ -6,10 +6,10 @@ import useUserDetails from 'hooks/useUserDetails'
 const User = () => {
   const { user, posts } = useUserDetails()
   return (
-    <div>
+    <>
       <UserDetails user={user} />
       <Wall posts={posts} />
-    </div>
+    </>
   )
 }
 

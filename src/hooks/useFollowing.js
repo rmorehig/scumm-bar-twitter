@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useUsers } from 'context/users/UserContext'
 import { getFollowingUsers } from 'services/users'
+import useAsync from './useAsync'
 
 export default function useFollowing() {
-  const [loading, setLoading] = useState(false)
+  const { status, data, error, run } = useAsync()
   const { following, setFollowing } = useUsers([])
 
   useEffect(() => {
-    setLoading(true)
-    getFollowingUsers().then(({ users }) => {
-      setFollowing(users)
-      setLoading(false)
-    })
-  }, [setLoading, setFollowing])
+    run(getFollowingUsers())
+  }, [run])
 
-  return { loading, following }
+  useEffect(() => {
+    setFollowing(data?.users)
+  }, [data, setFollowing])
+
+  return { loading: status === 'loading', following, error }
 }
