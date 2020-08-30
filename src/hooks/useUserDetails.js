@@ -4,11 +4,16 @@ import { getUserDetails } from 'services/users'
 
 function useUserDetails() {
   const { username } = useParams()
-  const { data, isLoading, error } = useQuery({
+  const { data, status, error } = useQuery({
     queryKey: `${username}-details`,
-    queryFn: () => getUserDetails({ username })
+    queryFn: () => getUserDetails({ username }),
   })
-  return { user: data?.user, posts: data?.posts, loading: isLoading, error }
+  return {
+    user: data?.user,
+    posts: data?.posts,
+    loading: status === 'loading',
+    error,
+  }
 }
 
 export default useUserDetails

@@ -5,17 +5,19 @@ import { createPost, getWall } from 'services/posts'
 
 export default function usePosts() {
   const { posts, setPosts, addPost } = usePostContext()
-  const { data, isLoading, error } = useQuery('wall', getWall)
+  const { data, status, error } = useQuery('wall', getWall)
 
   useEffect(() => {
-    setPosts(data?.posts)
-  }, [setPosts, data])
+    if (status === 'success') {
+      setPosts(data?.posts)
+    }
+  }, [setPosts, data, status])
 
   const postMessage = useCallback(
     async ({ message }) => {
       const { post } = await createPost({
         userId: 1,
-        content: message
+        content: message,
       })
       addPost(post)
     },
@@ -23,9 +25,9 @@ export default function usePosts() {
   )
 
   return {
-    loading: isLoading,
+    loading: status === 'loading',
     error,
     posts,
-    postMessage
+    postMessage,
   }
 }

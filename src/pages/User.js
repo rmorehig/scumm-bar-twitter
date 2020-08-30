@@ -5,7 +5,6 @@ import useUserDetails from 'hooks/useUserDetails'
 
 const User = () => {
   const { user, posts } = useUserDetails()
-  console.log(user, posts)
   return (
     <>
       <UserDetails user={user} />
