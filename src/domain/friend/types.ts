@@ -4,8 +4,13 @@ export interface Friend extends User {
   followedAt: Date
 }
 
-export interface AddFriendParams {
-  friendId: number
+export interface UpdateFriendshipParams {
+  user: Friend
   friends: Friend[]
-  username: string
+  usersToFollow: (Friend | User)[]
+}
+
+export interface UpdateFriendResult {
+  friends: Friend[]
+  usersToFollow: (Friend | User)[]
 }

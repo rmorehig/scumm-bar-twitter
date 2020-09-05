@@ -1,10 +1,10 @@
 import React from 'react'
 import SearchIcon from 'assets/SearchIcon'
-import useFollow from 'hooks/useFollow'
 import { Link } from 'react-router-dom'
+import useFriendship from 'hooks/useFriendship'
 
 const Follow = () => {
-  const { handleSearch, follow, handleFollow } = useFollow()
+  const { follow, handleSearch, handleFriendship } = useFriendship()
   return (
     <aside className="follow" aria-label="users to follow">
       <h2 className="follow__heading">Follow</h2>
@@ -31,7 +31,7 @@ const Follow = () => {
                     aria-label={`${
                       followedAt ? 'unfollow' : 'follow'
                     } ${username}`}
-                    onClick={() => handleFollow(user)}
+                    onClick={() => handleFriendship(user)}
                   >
                     {followedAt ? 'Unfollow' : 'Follow'}
                   </button>

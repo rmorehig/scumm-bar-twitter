@@ -35,13 +35,13 @@
       "id": 6,
       "name": "Stan S. Stanman",
       "username": "stan",
-      "avatar": "https://pbs.twimg.com/profile_images/1037302367715303424/6GFMd2FZ_400x400.jpg"
+      "avatar": "https://pbs.twimg.com/profile_images/486923925385797633/702fU6Kk_400x400.jpeg"
     },
     {
       "id": 7,
       "name": "Carla Swordmaster",
       "username": "carla",
-      "avatar": "https://pbs.twimg.com/profile_images/1181229626284265472/Rh8wrrvO_400x400.jpg"
+      "avatar": "https://pbs.twimg.com/profile_images/1083720495017721857/n6fAcTH4_400x400.jpg"
     }
   ],
   "posts": [
@@ -66,7 +66,7 @@
     {
       "id": 4,
       "createdAt": "2020-06-10T22:37:08.056Z",
-      "content": "Who is your target audience?",
+      "content": "There's nothing like the hot winds of hell!",
       "userId": 3
     },
     {
@@ -92,6 +92,12 @@
       "content": "How dare you approach the Sword Master without permission?",
       "createdAt": "2020-06-30T11:54:06.449Z",
       "userId": 7
+    },
+    {
+      "id": 9,
+      "content": "You’ve got to help me! I’m a victim of society!",
+      "createdAt": "2020-02-30T11:54:06.449Z",
+      "userId": 5
     }
   ],
   "follows": [

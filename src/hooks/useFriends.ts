@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useQuery } from 'react-query'
 import { getFriends } from 'application/getFriends'
-import { Friend } from 'domain/friend/types'
+import { useUsers } from 'context/users/UserContext'
 
 function useFriends() {
-  const [friends, setFriends] = useState<Friend[]>([])
+  const { friends, setFriends } = useUsers()
   const { data, status, error } = useQuery('friends', getFriends)
 
   useEffect(() => {

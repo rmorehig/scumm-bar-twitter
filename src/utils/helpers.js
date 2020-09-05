@@ -37,10 +37,7 @@ export const formatDate = date => {
 }
 
 export function deepFreeze(object) {
-  // Retrieve the property names defined on object
   var propNames = Object.getOwnPropertyNames(object)
-
-  // Freeze properties before freezing self
   for (let name of propNames) {
     let value = object[name]
 
@@ -48,6 +45,19 @@ export function deepFreeze(object) {
       deepFreeze(value)
     }
   }
-
   return Object.freeze(object)
+}
+
+export const updateItemFromArray = (array, item) => {
+  const index = array.findIndex(({ id }) => id === item.id)
+  if (index !== -1) {
+    array = [
+      ...array.slice(0, index),
+      {
+        ...item,
+      },
+      ...array.slice(index + 1),
+    ]
+  }
+  return array
 }

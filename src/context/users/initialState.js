@@ -1,6 +1,6 @@
 const inititalState = {
-  following: [],
-  follow: []
+  friends: [],
+  follow: [],
 }
 
 export default inititalState

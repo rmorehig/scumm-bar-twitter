@@ -1,50 +1,19 @@
-import React, { useReducer, useContext, useMemo, useCallback } from 'react'
-import inititalState from './initialState'
-import ACTIONS from './actions'
-import reducer from './reducer'
+import React, { useContext, useMemo, useState } from 'react'
 
 const UserContext = React.createContext({})
 
 function UserProvider({ children }) {
-  const [{ following, follow }, dispatch] = useReducer(reducer, inititalState)
-
-  const setFollowing = useCallback(
-    users => {
-      dispatch({ type: ACTIONS.SET_FOLLOWING_USERS, payload: { users } })
-    },
-    [dispatch]
-  )
-
-  const setFollow = useCallback(
-    users => {
-      dispatch({ type: ACTIONS.SET_FOLLOW_USERS, payload: { users } })
-    },
-    [dispatch]
-  )
-  const followUser = useCallback(
-    user => {
-      dispatch({ type: ACTIONS.FOLLOW_USER, payload: { user } })
-    },
-    [dispatch]
-  )
-
-  const unfollowUser = useCallback(
-    user => {
-      dispatch({ type: ACTIONS.UNFOLLOW_USER, payload: { user } })
-    },
-    [dispatch]
-  )
+  const [friends, setFriends] = useState([])
+  const [follow, setFollow] = useState([])
 
   const value = useMemo(
     () => ({
-      following,
+      friends,
       follow,
-      setFollowing,
+      setFriends,
       setFollow,
-      followUser,
-      unfollowUser
     }),
-    [following, follow, setFollowing, setFollow, followUser, unfollowUser]
+    [friends, follow, setFriends, setFollow]
   )
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>
 }
@@ -54,7 +23,8 @@ function useUsers() {
   if (!context) {
     throw new Error('useUsers must be called inside UserProvider')
   }
-  return context
+  const { friends, follow, setFriends, setFollow } = context
+  return { friends, follow, setFriends, setFollow }
 }
 
 export { useUsers, UserProvider }
