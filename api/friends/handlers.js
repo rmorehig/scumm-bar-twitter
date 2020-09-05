@@ -26,6 +26,13 @@ export const getFollowingUsers = async ({ user }) => {
     .map(({ followingId }) => usersDb.find(({ id }) => id === followingId))
 }
 
+export const getFriendsByUsername = async ({ username }) => {
+  const user = await getUserByUsername({ username })
+  return followsDb
+    .filter(follow => follow.userId === user.id)
+    .map(({ followingId }) => usersDb.find(({ id }) => id === followingId))
+}
+
 export const followUser = ({ user }) => {
   const friend = {
     ...user,
@@ -35,5 +42,7 @@ export const followUser = ({ user }) => {
 }
 
 export const unfollowUser = ({ user }) => {
-  delete user.followedAt
+  const unfollowed = user
+  delete unfollowed.followedAt
+  return unfollowed
 }

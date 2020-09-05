@@ -8,7 +8,7 @@ const PostMessage = React.memo(({ onSubmit }) => {
   }
   const handleSubmit = event => {
     event.preventDefault()
-    onSubmit({ message })
+    onSubmit(message)
     setMessage('')
   }
 

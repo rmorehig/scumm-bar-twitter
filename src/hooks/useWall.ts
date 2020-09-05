@@ -3,19 +3,22 @@ import { useQuery } from 'react-query'
 import { getWall } from 'application/getWall'
 import { addPostToWall } from 'application/addPostToWall'
 import { Post } from 'domain/post/types'
+import { User } from 'domain/user/types'
 
 function useWall() {
   const [posts, setPosts] = useState<Post[]>([])
+  const [user, setUser] = useState<User>()
   const { data, status, error } = useQuery('wall', getWall)
 
   useEffect(() => {
-    if (data && data.posts && data.posts.length && status === 'success') {
+    if (data && status === 'success') {
       setPosts(data.posts)
+      setUser(data.user)
     }
   }, [setPosts, data, status])
 
   const addPost = useCallback(
-    async ({ message }) => {
+    async message => {
       const updatedPosts = await addPostToWall({
         content: message,
         userId: 1,
@@ -31,6 +34,7 @@ function useWall() {
     error,
     posts,
     addPost,
+    user,
   }
 }
 

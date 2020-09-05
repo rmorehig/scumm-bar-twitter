@@ -1,12 +1,8 @@
-import { Wall } from './types'
 import { Post } from 'domain/post/types'
 
-export function addPost(post: Post, wall: Wall): Wall {
-  if (!post || !wall) {
+export function addPost(post: Post, posts: Post[]): Post[] {
+  if (!post || !posts) {
     throw new Error('the data is not valid')
   }
-  return {
-    ...wall,
-    posts: [post, ...wall.posts],
-  }
+  return [post, ...posts]
 }

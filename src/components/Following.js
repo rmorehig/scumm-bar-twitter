@@ -1,17 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import useFollowing from 'hooks/useFollowing'
 import Loader from './Loader'
+import useFriends from 'hooks/useFriends'
 
 const Following = () => {
-  const { following, loading } = useFollowing()
+  const { friends, loading } = useFriends()
   return (
     <aside className="following" aria-label="following users">
       <h2 className="following__heading">Following</h2>
       {loading && <Loader />}
-      {following && (
+      {friends && (
         <ul aria-label="following users">
-          {following.map(({ id, username, name }) => (
+          {friends.map(({ id, username, name }) => (
             <li key={id} className="following__item">
               <Link to={`/${username}`}>{name}</Link>
             </li>

@@ -8,10 +8,7 @@ export async function addPostToWall(params: AddPostParams): Promise<Post[]> {
   if (!content || !userId) {
     throw new Error('the data is not valid')
   }
-  const post = await postService.create(content, userId)
-  let wall = addPost(post, {
-    userId,
-    posts,
-  })
-  return wall.posts
+  const post = await postService.post(content, userId)
+  const updatedPosts = addPost(post, posts)
+  return updatedPosts
 }

@@ -6,5 +6,5 @@ export default async (_, response) => {
   const following = await getFollowingUsers({ user: me })
   const users = [me, ...following]
   const posts = await getPostsFromUsers({ users })
-  response.json({ userId: me.id, posts })
+  response.json({ user: me, posts })
 }

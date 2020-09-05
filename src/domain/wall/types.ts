@@ -1,7 +1,8 @@
 import { Post } from 'domain/post/types'
+import { User } from 'domain/user/types'
 
 export interface Wall {
-  userId: number
+  user: User
   posts: Post[]
 }
 
