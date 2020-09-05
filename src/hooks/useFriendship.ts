@@ -5,22 +5,22 @@ import { updateFriendship } from 'application/updateFriendship'
 import { searchFriends } from 'application/searchFriends'
 
 export default function useFriendship() {
-  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState('idle')
   const { friends, setFriends, follow, setFollow } = useUsers()
 
   const handleSearch = useCallback(
     debounce((query: string) => {
-      setLoading(true)
-      searchFriends(query).then(results => {
-        if (query) {
+      setStatus('loading')
+      if (query) {
+        searchFriends(query).then(results => {
           setFollow(results)
-        } else {
-          setFollow([])
-        }
-        setLoading(false)
-      })
+        })
+      } else {
+        setFollow([])
+      }
+      setStatus('success')
     }),
-    [setLoading, setFollow]
+    [setStatus, setFollow]
   )
 
   const handleFriendship = useCallback(
@@ -36,5 +36,10 @@ export default function useFriendship() {
     [friends, setFriends, follow, setFollow]
   )
 
-  return { loading, follow, handleSearch, handleFriendship }
+  return {
+    loading: status === 'loading',
+    follow,
+    handleSearch,
+    handleFriendship,
+  }
 }
