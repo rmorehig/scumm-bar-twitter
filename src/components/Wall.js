@@ -12,7 +12,7 @@ const Wall = ({ posts }) => {
         {!posts ? (
           <Loader />
         ) : (
-          posts.map(post => <Post key={post.id} post={post} />)
+          posts?.map(post => <Post key={post.id} post={post} />)
         )}
       </div>
     </section>

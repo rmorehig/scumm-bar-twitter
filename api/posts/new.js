@@ -6,5 +6,5 @@ export default async (request, response) => {
   const user = await getUserById({ id: userId })
   const post = await createPost({ content, user })
 
-  response.json({ post })
+  response.json(post)
 }

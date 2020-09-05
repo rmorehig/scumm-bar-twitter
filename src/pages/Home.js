@@ -1,14 +1,14 @@
 import React from 'react'
 import Wall from 'components/Wall'
 import PostMessage from 'components/PostMessage'
-import usePosts from 'hooks/usePosts'
 import Divider from 'styles/Divider'
+import useWall from 'hooks/useWall'
 
 const Home = () => {
-  const { posts, postMessage } = usePosts()
+  const { posts, addPost } = useWall()
   return (
     <>
-      <PostMessage onSubmit={postMessage} />
+      <PostMessage onSubmit={addPost} />
       <Divider />
       <Wall posts={posts} />
     </>

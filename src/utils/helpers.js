@@ -24,7 +24,7 @@ export const formatDate = date => {
     'Sep',
     'Oct',
     'Nov',
-    'Dec'
+    'Dec',
   ]
 
   const monthIndex = dateToFormat.getMonth()
@@ -34,4 +34,20 @@ export const formatDate = date => {
   return `${monthNames[monthIndex]} ${day}${
     currentYear !== year ? `, ${year}` : ''
   }`
+}
+
+export function deepFreeze(object) {
+  // Retrieve the property names defined on object
+  var propNames = Object.getOwnPropertyNames(object)
+
+  // Freeze properties before freezing self
+  for (let name of propNames) {
+    let value = object[name]
+
+    if (value && typeof value === 'object') {
+      deepFreeze(value)
+    }
+  }
+
+  return Object.freeze(object)
 }
