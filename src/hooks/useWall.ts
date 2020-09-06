@@ -21,7 +21,6 @@ function useWall() {
     async message => {
       const updatedPosts = await addPostToWall({
         content: message,
-        userId: 1,
         posts,
       })
       setPosts(updatedPosts)

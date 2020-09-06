@@ -8,6 +8,5 @@ export interface Wall {
 
 export interface AddPostParams {
   content: string
-  userId: number
   posts: Post[]
 }

@@ -7,7 +7,7 @@ export async function updateFriendship({
   friends,
   usersToFollow,
 }: UpdateFriendshipParams): Promise<UpdateFriendResult> {
-  if (!user || !friends) {
+  if (!user || !friends || !usersToFollow) {
     throw new Error('the data is not valid')
   }
   const friend = await friendService.put(user)

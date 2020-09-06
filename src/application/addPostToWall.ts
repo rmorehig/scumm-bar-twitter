@@ -4,11 +4,11 @@ import { addPost } from 'domain/wall/behaviors'
 import { Post } from 'domain/post/types'
 
 export async function addPostToWall(params: AddPostParams): Promise<Post[]> {
-  const { userId, content, posts } = params
-  if (!content || !userId) {
+  const { content, posts } = params
+  if (!content || !posts) {
     throw new Error('the data is not valid')
   }
-  const post = await postService.post(content, userId)
+  const post = await postService.post(content)
   const updatedPosts = addPost(post, posts)
   return updatedPosts
 }

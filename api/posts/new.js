@@ -1,9 +1,9 @@
 import { createPost } from './handlers'
-import { getUserById } from '../users/handlers'
+import { getMe } from '../users/handlers'
 
 export default async (request, response) => {
-  const { userId, content } = request.body
-  const user = await getUserById({ id: userId })
+  const { content } = request.body
+  const user = await getMe()
   const post = await createPost({ content, user })
 
   response.json(post)
