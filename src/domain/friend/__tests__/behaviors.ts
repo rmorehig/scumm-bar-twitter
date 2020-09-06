@@ -18,6 +18,7 @@ describe('Update friends', () => {
     const usersToFollow = [mockUser]
     const result = updateFriends(mockFriend, friends, usersToFollow)
     expect(result.friends).toHaveLength(1)
+    expect(result.friends[0]).toEqual(mockFriend)
     expect(result.usersToFollow).toHaveLength(1)
     expect(result.usersToFollow[0]).toEqual(mockFriend)
   })
