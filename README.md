@@ -42,6 +42,6 @@ yarn test:e2e
 <h2>Todo </h2>
 
 - [ ] Refactor sass to styled components
-- [ ] Extract api to another service
+- [ ] Extract business logic outside of React
 - [ ] Add data persistence
 - [ ] More tests (some tests fail due to refactoring the app from vanillaJS)
