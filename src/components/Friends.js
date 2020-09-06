@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Loader from './Loader'
 import useFriends from 'hooks/useFriends'
 
-const Following = () => {
+const Friends = () => {
   const { friends, loading } = useFriends()
   return (
     <aside className="following" aria-label="following users">
@@ -22,4 +22,4 @@ const Following = () => {
   )
 }
 
-export default Following
+export default Friends

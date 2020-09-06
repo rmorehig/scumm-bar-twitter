@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import ArrowLeft from 'assets/ArrowLeft'
+import ArrowLeft from 'components/icons/ArrowLeft'
 
 const UserDetails = ({ user }) => {
   const { push } = useHistory()

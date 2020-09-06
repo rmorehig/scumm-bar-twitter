@@ -1,11 +1,11 @@
 import React from 'react'
-import Following from './Following'
+import Friends from './Friends'
 import Follow from './Follow'
 
 const Sidebar = () => {
   return (
     <div className="sidebar" role="complementary" aria-label="sidebar">
-      <Following />
+      <Friends />
       <Follow />
     </div>
   )

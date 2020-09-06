@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchIcon from 'assets/SearchIcon'
+import SearchIcon from 'components/icons/SearchIcon'
 import { Link } from 'react-router-dom'
 import useFriendship from 'hooks/useFriendship'
 
