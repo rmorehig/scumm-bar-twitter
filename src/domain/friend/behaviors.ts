@@ -1,6 +1,7 @@
 import { Friend, UpdateFriendResult } from './types'
 import { User } from 'domain/user/types'
 import { updateItemFromArray } from 'utils/helpers'
+
 export function updateFriends(
   user: Friend,
   friends: Friend[],
@@ -11,7 +12,7 @@ export function updateFriends(
   }
   let updatedFriends = friends
   let updatedUsersToFollow = usersToFollow
-  if (user.followedAt) {
+  if (user?.followedAt) {
     updatedFriends = [...updatedFriends, user]
   } else {
     updatedFriends = updatedFriends.filter(({ id }) => id !== user.id)

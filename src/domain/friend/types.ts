@@ -1,7 +1,7 @@
 import { User } from 'domain/user/types'
 
 export interface Friend extends User {
-  followedAt: Date
+  followedAt?: string
 }
 
 export interface UpdateFriendshipParams {
