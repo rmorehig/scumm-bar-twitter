@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import { debounce } from 'utils/helpers'
-import { useUsers } from 'context/users/UserContext'
+import { useUsers } from 'context/UserContext'
 import { updateFriendship } from 'application/updateFriendship'
 import { searchFriends } from 'application/searchFriends'
 

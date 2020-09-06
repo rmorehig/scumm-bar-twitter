@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useQuery } from 'react-query'
 import { getFriends } from 'application/getFriends'
-import { useUsers } from 'context/users/UserContext'
+import { useUsers } from 'context/UserContext'
 
 function useFriends() {
   const { friends, setFriends } = useUsers()
