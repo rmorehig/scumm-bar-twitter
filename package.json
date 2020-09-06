@@ -2,6 +2,7 @@
   "name": "scumm-bar-twitter",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://scumm-bar-twitter.vercel.app/",
   "dependencies": {
     "@types/jest": "^26.0.10",
     "@types/node": "^14.6.2",
@@ -23,6 +24,20 @@
     "test:e2e": "start-server-and-test 'yarn start' 3000 'cypress run'",
     "eject": "react-scripts eject"
   },
+  "devDependencies": {
+    "@testing-library/cypress": "^7.0.0",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.7",
+    "@testing-library/react-hooks": "^3.3.0",
+    "@testing-library/user-event": "^12.0.11",
+    "concurrently": "^5.2.0",
+    "cypress": "^5.1.0",
+    "eslint-plugin-cypress": "^2.11.1",
+    "json-server": "^0.16.1",
+    "react-test-renderer": "^16.13.1",
+    "start-server-and-test": "^1.11.2",
+    "vercel": "^20.1.0"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -37,18 +52,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@testing-library/cypress": "^6.0.0",
-    "@testing-library/jest-dom": "^5.11.1",
-    "@testing-library/react": "^10.4.7",
-    "@testing-library/react-hooks": "^3.3.0",
-    "@testing-library/user-event": "^12.0.11",
-    "concurrently": "^5.2.0",
-    "cypress": "^4.10.0",
-    "json-server": "^0.16.1",
-    "react-test-renderer": "^16.13.1",
-    "start-server-and-test": "^1.11.2",
-    "vercel": "^20.1.0"
   }
 }
