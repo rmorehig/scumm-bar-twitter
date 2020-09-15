@@ -4,4 +4,5 @@ export interface User {
   username: string
   avatar?: string
   me?: boolean
+  followedAt?: string
 }

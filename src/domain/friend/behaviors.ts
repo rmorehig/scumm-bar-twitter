@@ -1,11 +1,11 @@
-import { Friend, UpdateFriendResult } from './types'
+import { UpdateFriendResult } from './types'
 import { User } from 'domain/user/types'
 import { updateItemFromArray } from 'utils/helpers'
 
 export function updateFriends(
-  user: Friend,
-  friends: Friend[],
-  usersToFollow: (Friend | User)[]
+  user: User,
+  friends: User[],
+  usersToFollow: User[]
 ): UpdateFriendResult {
   if (!user || !friends) {
     throw new Error('the data is not valid')

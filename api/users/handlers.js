@@ -4,8 +4,12 @@ export const getUserByUsername = async ({ username }) => {
   return usersDb.find(user => user.username === username)
 }
 
-export const getUserById = async ({ id }) => {
-  return usersDb.find(user => user.id === id)
+export const getUserById = async ({ id }, followedAt) => {
+  const user = usersDb.find(user => user.id === id)
+  return {
+    ...user,
+    followedAt: followedAt || undefined,
+  }
 }
 
 export const getMe = async () => usersDb.find(user => user.me)

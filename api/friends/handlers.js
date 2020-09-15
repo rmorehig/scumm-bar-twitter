@@ -1,11 +1,20 @@
 import { users as usersDb, follows as followsDb } from '../db.json'
-import { getUserByUsername, getMe } from '../users/handlers'
+import { getUserByUsername, getMe, getUserById } from '../users/handlers'
+
+const getFriendsFromFollows = async follows => {
+  const friends = await Promise.all(
+    follows.map(({ followingId, followedAt }) =>
+      getUserById({ id: followingId }, followedAt)
+    )
+  )
+  return friends
+}
 
 export const getFriendsByUsername = async ({ username }) => {
   const user = await getUserByUsername({ username })
-  return followsDb
-    .filter(follow => follow.userId === user.id)
-    .map(({ followingId }) => usersDb.find(({ id }) => id === followingId))
+  const follows = followsDb.filter(follow => follow.userId === user.id)
+  const friends = await getFriendsFromFollows(follows)
+  return friends
 }
 
 export const updateFriend = async ({ user }) => {

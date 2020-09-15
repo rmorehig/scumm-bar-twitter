@@ -1,5 +1,5 @@
+import { User } from 'domain/user/types'
 import { updateFriends } from '../behaviors'
-import { Friend } from '../types'
 
 const mockUser = {
   id: 123,
@@ -14,7 +14,7 @@ const mockFriend = {
 
 describe('Update friends', () => {
   it('adds a friend to friend list if has been followed', () => {
-    const friends = [] as Friend[]
+    const friends = [] as User[]
     const usersToFollow = [mockUser]
     const result = updateFriends(mockFriend, friends, usersToFollow)
     expect(result.friends).toHaveLength(1)

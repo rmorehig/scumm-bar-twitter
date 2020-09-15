@@ -1,18 +1,18 @@
+import { User } from 'domain/user/types'
 import client from 'utils/client'
 import { deepFreeze } from 'utils/helpers'
-import { Friend } from 'domain/friend/types'
 
-async function get(): Promise<Friend[]> {
+async function get(): Promise<User[]> {
   const data = await client(`/friends`)
   return deepFreeze(data)
 }
 
-async function put(user: Friend): Promise<Friend> {
+async function put(user: User): Promise<User> {
   const data = await client(`/friends`, { user })
   return deepFreeze(data)
 }
 
-async function search(query: string): Promise<Friend[]> {
+async function search(query: string): Promise<User[]> {
   const data = await client(`/friends/search`, { query })
   return deepFreeze(data)
 }

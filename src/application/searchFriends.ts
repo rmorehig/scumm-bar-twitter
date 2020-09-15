@@ -1,7 +1,7 @@
+import { User } from 'domain/user/types'
 import { friendService } from 'services/friends'
-import { Friend } from 'domain/friend/types'
 
-export async function searchFriends(query: string): Promise<Friend[]> {
+export async function searchFriends(query: string): Promise<User[]> {
   const friends = await friendService.search(query)
   return friends
 }
